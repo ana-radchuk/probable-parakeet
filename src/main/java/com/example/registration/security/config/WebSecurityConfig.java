@@ -30,7 +30,7 @@ public class WebSecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((auth) -> auth.requestMatchers("/api/v1/login").permitAll().anyRequest().authenticated())
-                .formLogin(form -> form.loginPage("/api/v1/login").permitAll())
+                //.formLogin(form -> form.loginPage("/api/v1/login").permitAll())
                 .httpBasic(withDefaults());
 
         return http.build();
