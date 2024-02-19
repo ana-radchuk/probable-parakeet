@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class LoginController {
 
-    private LoginService loginService;
+    private final LoginService loginService;
 
     @PostMapping()
     public String register(@RequestBody RegistrationRequest request) {
         return loginService.register(request);
+    }
+
+    @GetMapping(path = "/confirm")
+    public String confirm(@RequestParam("token") String token) {
+        return loginService.confirmToken(token);
     }
 }
