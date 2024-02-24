@@ -1,5 +1,6 @@
-package com.example.registration.appuser;
+package com.example.registration.repository;
 
+import com.example.registration.entity.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

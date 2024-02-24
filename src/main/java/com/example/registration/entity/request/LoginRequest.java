@@ -1,4 +1,4 @@
-package com.example.registration.dto;
+package com.example.registration.entity.request;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

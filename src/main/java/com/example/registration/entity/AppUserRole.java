@@ -1,6 +1,5 @@
-package com.example.registration.appuser;
+package com.example.registration.entity;
 
 public enum AppUserRole {
-    USER,
-    ADMIN
+    USER, ADMIN
 }

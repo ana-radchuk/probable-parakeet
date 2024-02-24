@@ -1,6 +1,6 @@
-package com.example.registration.login.token;
+package com.example.registration.token;
 
-import com.example.registration.appuser.AppUser;
+import com.example.registration.entity.AppUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

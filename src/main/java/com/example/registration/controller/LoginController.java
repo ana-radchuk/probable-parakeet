@@ -1,7 +1,8 @@
-package com.example.registration.login;
+package com.example.registration.controller;
 
-import com.example.registration.dto.LoginRequest;
-import com.example.registration.dto.RegistrationRequest;
+import com.example.registration.entity.request.LoginRequest;
+import com.example.registration.entity.request.RegistrationRequest;
+import com.example.registration.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,9 +18,8 @@ public class LoginController {
     public String register(@RequestBody RegistrationRequest request) {
         return loginService.register(request);
     }
-
     @PostMapping(path="/login")
-    public String register(@RequestBody LoginRequest request) {
+    public String login(@RequestBody LoginRequest request) {
         return loginService.login(request);
     }
 

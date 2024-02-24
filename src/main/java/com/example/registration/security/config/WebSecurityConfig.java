@@ -1,6 +1,6 @@
 package com.example.registration.security.config;
 
-import com.example.registration.appuser.AppUserService;
+import com.example.registration.service.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,8 +29,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((auth) -> auth.requestMatchers("/api/v1/login/**").permitAll().anyRequest().authenticated())
-                //.formLogin(form -> form.loginPage("/api/v1/login").permitAll())
+                .authorizeHttpRequests((auth) -> auth.requestMatchers("/api/v1/**").permitAll().anyRequest().authenticated())
                 .httpBasic(withDefaults());
 
         return http.build();

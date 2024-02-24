@@ -1,7 +1,8 @@
-package com.example.registration.appuser;
+package com.example.registration.service;
 
-import com.example.registration.login.token.ConfirmationToken;
-import com.example.registration.login.token.ConfirmationTokenService;
+import com.example.registration.entity.AppUser;
+import com.example.registration.token.ConfirmationToken;
+import com.example.registration.token.ConfirmationTokenService;
 import com.example.registration.repository.AppUserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,7 +32,7 @@ public class AppUserService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email)));
     }
 
-    public String signUpUser(AppUser appUser) {
+    public String createUser(AppUser appUser) {
         boolean userExists = appUserRepository.findByEmail(appUser.getEmail())
                 .isPresent();
 
@@ -52,8 +53,6 @@ public class AppUserService implements UserDetailsService {
         );
 
         confirmationTokenService.saveConfirmationToken(confirmationToken);
-
-        // TODO: send email
 
         return token;
     }
