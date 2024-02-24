@@ -2,6 +2,7 @@ package com.example.registration.appuser;
 
 import com.example.registration.login.token.ConfirmationToken;
 import com.example.registration.login.token.ConfirmationTokenService;
+import com.example.registration.repository.AppUserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

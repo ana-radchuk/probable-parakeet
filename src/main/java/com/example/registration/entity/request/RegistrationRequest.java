@@ -1,4 +1,4 @@
-package com.example.registration.login;
+package com.example.registration.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

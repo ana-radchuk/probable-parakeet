@@ -3,6 +3,7 @@ package com.example.registration.login;
 import com.example.registration.appuser.AppUser;
 import com.example.registration.appuser.AppUserRole;
 import com.example.registration.appuser.AppUserService;
+import com.example.registration.dto.RegistrationRequest;
 import com.example.registration.email.EmailSender;
 import com.example.registration.login.token.ConfirmationToken;
 import com.example.registration.login.token.ConfirmationTokenService;
@@ -37,11 +38,10 @@ public class LoginService {
                 ));
 
         String link = "http://localhost:8080/api/v1/login/confirm?token=" + token;
-        System.out.println(link);
-        emailSender.send(
-                request.getEmail(),
-                buildEmail(request.getFirstName(),
-                link));
+//        emailSender.send(
+//                request.getEmail(),
+//                buildEmail(request.getFirstName(),
+//                link));
 
         return token;
     }

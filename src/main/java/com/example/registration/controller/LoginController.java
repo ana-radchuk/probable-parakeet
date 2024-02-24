@@ -1,18 +1,26 @@
 package com.example.registration.login;
 
+import com.example.registration.dto.LoginRequest;
+import com.example.registration.dto.RegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "api/v1/login")
+@CrossOrigin
 @AllArgsConstructor
+@RequestMapping(path = "api/v1")
 public class LoginController {
 
     private final LoginService loginService;
 
-    @PostMapping()
+    @PostMapping(path="/register")
     public String register(@RequestBody RegistrationRequest request) {
         return loginService.register(request);
+    }
+
+    @PostMapping(path="/login")
+    public String register(@RequestBody LoginRequest request) {
+        return loginService.login(request);
     }
 
     @GetMapping(path = "/confirm")
